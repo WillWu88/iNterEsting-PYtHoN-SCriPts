@@ -3,9 +3,9 @@ import random
 filename = input("Filename to be encrypted > ")+".txt"
 
 #read and load file
-file = open(filename,"r")
+file = open(filename, "r")
 message = file.readline()
-print ("the unencrypted version is:"+message)
+print("the unencrypted version is:"+message)
 
 #encrytion begins
 # temp arry holds message
@@ -23,10 +23,10 @@ decryptKey = []
 value and the real value'''
 
 for chars in str_array:
-    a = random.randint(0,127)
+    a = random.randint(0, 127)
     encrypted_array.insert(len(encrypted_array), chr(a))
     b = ord(chars) - a
-    decryptKey.insert(len(decryptKey),b)
+    decryptKey.insert(len(decryptKey), b)
 
 with open("encrypted.txt", "w+") as output_file:
     for chars in encrypted_array:
