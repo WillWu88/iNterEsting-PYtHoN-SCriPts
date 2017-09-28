@@ -11,7 +11,7 @@ print("the unencrypted version is:"+message)
 # temp arry holds message
 str_array = []
 for letters in message:
-    str_array.insert(len(str_array),letters)
+    str_array.insert(len(str_array), letters)
 #print ("The array:"+str(str_array))
 
 #holds encrypted message
