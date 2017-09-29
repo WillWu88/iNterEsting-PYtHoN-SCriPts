@@ -1,6 +1,5 @@
 #decrypting file
 #takes two files, a decrp
-import math
 import decryptionKey
 import encrypted
 
