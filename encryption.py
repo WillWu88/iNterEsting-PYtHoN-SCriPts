@@ -28,10 +28,9 @@ for chars in str_array:
     encrypted_array.insert(len(encrypted_array), chr(b))
     decryptKey.insert(len(decryptKey), a)
 
-with open("encrypted.txt", "w+") as output_file:
-    for chars in encrypted_array:
-        output_file.write(chars)
+with open("encrypted.py", "w+") as output_file:
+    output_file.write("key="+str(encrypted_array))
 
-with open("decryptionKey.txt", "w+") as output_file:
-    for num in decryptKey:
-        output_file.write(str(num)+",")
+with open("decryptionKey.py", "w+") as output_file:
+    output_file.write("key="+str(decryptKey))
+

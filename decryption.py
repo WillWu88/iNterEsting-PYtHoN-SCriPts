@@ -1,28 +1,13 @@
 #decrypting file
 #takes two files, a decrp
-filename = "encrypted.txt"
-file_to_decry = open(filename, "r")
+import math
+import decryptionKey
+import encrypted
 
-filename2 = "decryptionKey.txt"
-keyFile = open(filename2, "r")
+decrypted = ""
 
-encrypted_File = []
-shift_key = []
+for num in range(len(decryptionKey.key)):
+    decrypted += chr(decryptionKey.key[num]+ord(encrypted.key[num]))
 
-for chars in file_to_decry:
-    encrypted_File.insert(len(encrypted_File), chars)
-
-#"decomma" the string from key file for the type inversion
-
-#work on this tmr, still buggy
-pointer = 0
-while True:
-    char = keyFile.read(1)
-    if not char:
-        break
-    elif (char==','):
-        pointer+=1
-    else:
-        shift_key.insert(pointer, int(char))
-
-print(shift_key)
+print(decrypted)
+#print(shift_key)
