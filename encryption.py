@@ -33,4 +33,3 @@ with open("encrypted.py", "w+") as output_file:
 
 with open("decryptionKey.py", "w+") as output_file:
     output_file.write("key="+str(decryptKey))
-
