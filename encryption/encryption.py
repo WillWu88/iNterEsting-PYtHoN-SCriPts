@@ -23,14 +23,13 @@ decryptKey = []
 value and the real value'''
 
 for chars in str_array:
-    a = random.randint(0, 127)
-    encrypted_array.insert(len(encrypted_array), chr(a))
+    a = random.randint(0, ord(chars))
     b = ord(chars) - a
-    decryptKey.insert(len(decryptKey), b)
+    encrypted_array.insert(len(encrypted_array), chr(b))
+    decryptKey.insert(len(decryptKey), a)
 
-with open("encrypted.txt", "w+") as output_file:
-    for chars in encrypted_array:
-        output_file.write(chars)
+with open("encrypted.py", "w+") as output_file:
+    output_file.write("key="+str(encrypted_array))
 
-with open("decryptionKey.txt", "w+") as output_file:
-    output_file.write(str(decryptKey))
+with open("decryptionKey.py", "w+") as output_file:
+    output_file.write("key="+str(decryptKey))
