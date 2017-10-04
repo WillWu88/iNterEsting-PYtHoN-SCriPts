@@ -1,23 +1,23 @@
 import random
-#using python 3 syntax
-filename = input("Filename to be encrypted > ")+".txt"
+# using python 3 syntax
+filename = input("Filename to be encrypted > ") + ".txt"
 
-#read and load file
+# read and load file
 file = open(filename, "r")
 message = file.readline()
-print("the unencrypted version is:"+message)
+print("the unencrypted version is: " + message)
 
-#encrytion begins
+# encrytion begins
 # temp arry holds message
 str_array = []
 for letters in message:
     str_array.insert(len(str_array), letters)
 #print ("The array:"+str(str_array))
 
-#holds encrypted message
+# holds encrypted message
 encrypted_array = []
 
-#declaring temp variables to be used later
+# declaring temp variables to be used later
 decryptKey = []
 '''holds the decryption keys, the difference between the actuall
 value and the real value'''
@@ -28,8 +28,10 @@ for chars in str_array:
     encrypted_array.insert(len(encrypted_array), chr(b))
     decryptKey.insert(len(decryptKey), a)
 
-with open("encrypted.py", "w+") as output_file:
-    output_file.write("key="+str(encrypted_array))
+with open("encrypted.txt", "w+") as output_file:
+    for chars in encrypted_array:
+        output_file.write(chars)
 
-with open("decryptionKey.py", "w+") as output_file:
-    output_file.write("key="+str(decryptKey))
+with open("decryptionKey.txt", "w+") as output_file:
+    for nums in decryptKey:
+        output_file.write(str(chars)+",")

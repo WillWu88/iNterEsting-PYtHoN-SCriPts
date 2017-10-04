@@ -9,4 +9,5 @@ for num in range(len(decryptionKey.key)):
     decrypted += chr(decryptionKey.key[num]+ord(encrypted.key[num]))
 
 print(decrypted)
-#print(shift_key)
+
+#remember to go back to rewrite the previous version
