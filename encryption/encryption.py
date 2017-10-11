@@ -34,4 +34,4 @@ with open("encrypted.txt", "w+") as output_file:
 
 with open("decryptionKey.txt", "w+") as output_file:
     for nums in decryptKey:
-        output_file.write(str(chars)+",")
+        output_file.write(str(chars) + ",")
