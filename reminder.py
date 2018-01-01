@@ -49,7 +49,8 @@ class User():
                 print('Case: ' + item[0])
 
     def deleteTask(self, index):
-        a
+        print('Todo: ' + str(self.tasks.pop(index)) + 'removed')
+    
 
 # test case
 # a = User(13, "Student", "Will Wu", 0, [])
