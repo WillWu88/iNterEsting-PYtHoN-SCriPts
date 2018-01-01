@@ -15,9 +15,10 @@ Key Features:
 More features to come
 '''
 
+#Important: index should all be +1
 
 class User():
-    """docstring for User"""
+    '''docstring for User'''
 
     def __init__(self, age=0, profession='',
                  name='', taskNum=0, tasks=0):
@@ -44,18 +45,29 @@ class User():
         print('Todo #' + str(index) + ' updated')
 
     def findTask(self, KeyWord):
-        for item in self.tasks:
-            if KeyWord.lower() in item[0].lower():
-                print('Case: ' + item[0])
+        for number in range(len(self.tasks)):
+            if KeyWord.lower() in self.tasks[number][0].lower():
+                print('Case: Todo #' + str(number+1) + ': '
+                      + self.tasks[number][0])
 
     def deleteTask(self, index):
         print('Todo: ' + str(self.tasks.pop(index)) + 'removed')
-    
+
+    def editNote(self, note, index):
+        self.tasks[index][1] = str(note)
+        print('Note added: todo #' + str(index+1))
+
+    def sitRap(self):
+        sit_rap_message = 
+        return
 
 # test case
-# a = User(13, "Student", "Will Wu", 0, [])
-# a.changeInput(14, a.age)
-# a.addTask('Homework')
-# a.addTask('SmartHome')
-# a.editTask('Home', 1)
-# a.findTask('Home')
+a = User(13, "Student", "Will Wu", 0, [])
+a.changeInput(14, a.age)
+a.addTask('Homework')
+a.addTask('SmartHome')
+a.editTask('Home', 1)
+a.addTask('Sports')
+a.addTask('Hommy')
+a.findTask('Home')
+a.editNote('1', 1)
