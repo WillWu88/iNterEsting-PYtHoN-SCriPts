@@ -6,7 +6,7 @@ Interacion: command by inputing lines/gui
 
 dev note: needs autopep8 on windows
 
-Check: 
+Check:
 1. Time and how to format
 
 Key Features:
@@ -23,7 +23,8 @@ Key Features:
 More features to come
 '''
 
-#Important: index should all be +1
+# Important: index should all be +1
+
 
 class User():
     '''docstring for User'''
@@ -63,7 +64,7 @@ class User():
         '''
         for number in range(len(self.tasks)):
             if KeyWord.lower() in self.tasks[number][0].lower():
-                print('Case: Todo #' + str(number+1) + ': '
+                print('Case: Todo #' + str(number + 1) + ': '
                       + self.tasks[number][0])
 
     def deleteTask(self, index):
@@ -73,14 +74,14 @@ class User():
     def editNote(self, note, index):
         '''edit the reminder note'''
         self.tasks[index][1] = str(note)
-        print('Note added: todo #' + str(index+1))
+        print('Note added: todo #' + str(index + 1))
 
     def dueToday(self):
-        '''returns a boolean 
+        '''returns a boolean
         if the item(a compound list from self.tasks) is due today
         this includes dued objects as well
         '''
-        #needs work on time
+        # needs work on time
         return true
 
     def remind(self):
@@ -91,7 +92,8 @@ class User():
             test = self.dueToday(self.tasks[num])
             if (test):
                 self.due_today_list.append(self.due_today_list[num])
-        heads_up = 'You have'+ str(len(self.due_today_list)) + 'due today'
+        heads_up = 'You have' + str(len(self.due_today_list))
+            + 'due today'
         return heads_up
 
     def setDueDate(self, index):
@@ -104,17 +106,35 @@ class User():
 
     def newCategory(self, name):
         '''adds a new category to the categories list
-        the new category is always appended, so the len()-1 is the index'''
+        the new category is always appended,
+        so the len()-1 is the index'''
         self.categories.append([str(name)])
-        return len(self.categories)-1
+        return len(self.categories) - 1
 
-    
+    def addToCategory(self, todo_index, category_index):
+        '''store the index of the target todo in the category array
+        returns the category array index
+        '''
+        self.categories[category_index].append(todo_index)
+        return category_index
+
+    def displayCategory(self, category_index):
+        '''return a string with the names of the todos in the category
+        list
+        '''
+        # the category sub arrays first item is always the 'tag'/name
+        string_to_print = ''
+        for index in range(1, len(self.categories[category_index])):
+            string_to_print.append(
+                str(self.tasks[self.categories[category_index]
+                               [index]][0]))
 
     def sitRap(self):
         pass
-        # sit_rap_message = ('You have' + str(self.taskNum) 
+        # sit_rap_message = ('You have' + str(self.taskNum)
         #                     + 'tasks to do.')
         # return
+
 
 # test case
 a = User(13, 'Student', 'Will Wu', 0, [])
