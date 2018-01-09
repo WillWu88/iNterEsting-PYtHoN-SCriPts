@@ -108,6 +108,7 @@ class User():
         self.categories.append([str(name)])
         return len(self.categories)-1
 
+    
 
     def sitRap(self):
         pass
