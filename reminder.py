@@ -8,6 +8,7 @@ dev note: needs autopep8 on windows
 
 Check:
 1. Time and how to format
+2. Create an interface script that use the methods
 
 Key Features:
 [] 1. Add/delete tasks/reminders into categories
@@ -109,6 +110,7 @@ class User():
         self.categories.append([str(name)])
         return len(self.categories) - 1
 
+
     def addToCategory(self, todo_index, category_index):
         '''store the index of the target todo in the category array
         returns the category array index
@@ -128,7 +130,9 @@ class User():
                                     [category_index][index]][0]) + ' '
         return string_to_print
 
+
     def sitRap(self):
+
         pass
         # sit_rap_message = ('You have' + str(self.taskNum)
         #                     + 'tasks to do.')
