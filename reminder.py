@@ -85,15 +85,13 @@ class User():
         return true
 
     def remind(self):
-        self.
         '''run through the list at 8 every morning, est
         adds a new list with everything due today'''
         for num in len(self.tasks):
             test = self.dueToday(self.tasks[num])
             if (test):
                 self.due_today_list.append(self.due_today_list[num])
-        heads_up = 'You have' + str(len(self.due_today_list))
-            + 'due today'
+        heads_up = 'You have' + str(len(self.due_today_list)) + 'due today'
         return heads_up
 
     def setDueDate(self, index):
@@ -125,9 +123,10 @@ class User():
         # the category sub arrays first item is always the 'tag'/name
         string_to_print = ''
         for index in range(1, len(self.categories[category_index])):
-            string_to_print.append(
-                str(self.tasks[self.categories[category_index]
-                               [index]][0]))
+            string_to_print += str(self.tasks
+                                   [self.categories
+                                    [category_index][index]][0]) + ' '
+        return string_to_print
 
     def sitRap(self):
         pass
@@ -138,7 +137,7 @@ class User():
 
 # test case
 a = User(13, 'Student', 'Will Wu', 0, [])
-a.changeInput(14, a.age)
+a.changeProperties(14, a.age)
 a.addTask('Homework')
 a.addTask('SmartHome')
 a.editTask('Home', 1)
@@ -146,3 +145,8 @@ a.addTask('Sports')
 a.addTask('Hommy')
 a.findTask('Home')
 a.editNote('1', 1)
+a.newCategory('Physics')
+a.addToCategory(2, 0)
+a.addToCategory(0, 0)
+print(a.categories)
+print(a.displayCategory(0))
