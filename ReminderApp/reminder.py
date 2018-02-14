@@ -21,6 +21,8 @@ Key Features:
 [] 8. GUI?
 [] 9. Executable Command Line Binary
 
+[] 1*. Integrate doc string test
+
 More features to come
 '''
 
@@ -49,7 +51,9 @@ class User():
         self.target_Var = input
 
     def addTask(self, task):
-        '''add a task into the existing task list'''
+        '''add a task into the existing task list
+
+        '''
         self.tasks.append([str(task), 'Note: ', 'Due date: '])
         self.taskNum += 1
         print('Todo #' + str(len(self.tasks)) + ' added')
@@ -140,6 +144,8 @@ class User():
 
 
 # test case
+#Soon be replaced by docstring tests
+
 a = User(13, 'Student', 'Will Wu', 0, [])
 a.changeProperties(14, a.age)
 a.addTask('Homework')
