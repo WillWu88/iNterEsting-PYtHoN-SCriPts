@@ -13,5 +13,3 @@ encrypted = []
 def constant_shift(shift):
     for char in message:
         encrypted.append(chr(ord(char) + shift))
-
-def random_shift
