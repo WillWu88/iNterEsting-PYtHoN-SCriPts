@@ -1,15 +1,12 @@
-def ImportMessage(encrypted_File_Name):
-    '''pull the chars out from the encrypted file'''
-    char_List = []
-    with open(encrypted_File_Name,'r') as encrypted_message:
-        char_List = encrypted_message.readline()
-        char_List = [x.strip() for x in char_List]
-    return char_List
+#decrypting file
+#takes two files, a decrp
+import decryptionKey
+import encrypted
 
-def ImportKey(decryption_Key_File):
-    key_list = []
-    with open(decryption_Key_File, 'r') as decryption_key:
-        key_list = decryption_key.readline()
-        key_list = [x.remove(',') for ]
+decrypted = ""
 
-#print("The unencrypted message is"+str(ImportMessage('encrypted.txt')))
+for num in range(len(decryptionKey.key)):
+    decrypted += chr(decryptionKey.key[num]+ord(encrypted.key[num]))
+
+print(decrypted)
+#print(shift_key)
